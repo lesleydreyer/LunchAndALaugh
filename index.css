@@ -1,0 +1,203 @@
+/* might play around with later to make fonts scale
+:root {
+  font-size: calc(1vw + 1vh + .5vmin);
+}*/
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1.1px;
+}
+
+body,html {
+  padding:0;
+}
+
+.bg {
+  background-image: url(images/Geometric-Background.svg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+  height: 100%;
+  padding-bottom: 25px
+}
+
+.logo {
+    width: 100%;
+    margin: auto auto auto -30px;  /*top right bottom left*/
+    display: block;
+}
+
+li {
+  list-style-type: none;
+}
+
+lh {
+  font-weight: bolder;
+  
+}
+
+p {
+  line-height: 130%;
+  
+}
+
+.fieldset {
+    border: 0;
+}
+
+
+input[type=text] {
+    width: 70%;
+    display: block;
+    padding: 12px 12px;
+    margin-bottom: 15px;
+    margin-top: 8px;
+    font-family: inherit;
+}
+
+label {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+/*//////  SEARCH BUTTON  //////*/
+button {
+  background-color: black;
+  font-family: inherit;
+  color: #FFF0A6; 
+  padding: 5px 15px;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: .12em;
+}
+
+button:hover {
+  background-color: #FEC858;
+  color:black;
+}
+
+.search {
+  font-family: Covered by your grace;
+  letter-spacing: .1em;
+  font-size: 130%;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+
+/*//////  SEARCH RESULTS  //////*/
+#searchResults {
+  max-height: 100vh;
+  overflow: auto;
+}
+
+.collapsible {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    min-width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    padding: 15px;
+} /* D25454 F27264 FEC858 FFF0A6*/
+
+.active, .collapsible:hover {
+    background-color: #F27264;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.content {
+    overflow-wrap: break-word;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+
+
+
+.goToVenue {
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #D25454;
+}
+.goToVenue:hover {
+  color:#F27264;
+}
+
+
+/*//////  JOKE  //////*/
+.jokeCollapsible {
+  font-family: covered by your grace;
+  color: #D25454;
+  font-size: 130%;
+  cursor: pointer;
+  padding: 15px;
+} /* D25454 F27264 FEC858 FFF0A6*/
+
+.jokeActive, .jokeCollapsible:hover {
+    color: black;
+}
+
+.jokeCollapsible:after {
+    content: '\002B';
+}
+
+.jokeActive:after {
+    content: "\2212";
+}
+
+.jokeContent {
+  font-family: covered by your grace;
+  font-size: 130%;
+  overflow-wrap: break-word;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  padding: 15px;
+}
+
+
+/*//////  MEDIA QUERIES  //////*/
+
+@media  screen and (min-device-width : 768px) and (orientation : landscape) {
+    .logo {
+    max-width: 10vw;
+  }
+}
+  
+  
+@media  screen and (orientation : landscape) {
+  .logo {
+    max-width: 50vw;
+    min-width: 40vw;
+  }
+}
+
+}
+
+/* We're setting our own focus outline here
+ because we want to be sure it is visible against
+ our blue background. */
+#searchResults a:hover,
+#searchResults a:focus,
+#js-search-form input:focus,
+#js-search-form .search button:focus {
+  outline: 5px solid blue;
+}

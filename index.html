@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lunch and a Laugh - API capstone</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
+        <link rel="stylesheet" href="float-grid.css" />
+        <link href="index.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+  </head>
+  <body >
+    <div class="bg">
+      <div class="row">
+        <div id="initialrow" class="col-12"><!--change to col 6 after search -->
+          
+          <header role="banner">
+            <img src="images/logo2.svg" alt="Lunch and a Laugh logo" class="logo" />
+          </header>
+            
+          <main role="main">        
+            <form id="js-search-form" role="search">
+              <fieldset class="fieldset">
+                <legend>Find somewhere to go for lunch (or any time)!</legend>
+                <label for="venue">What</label>
+                  <input type="text" id="venue" name="venue" placeholder="ie: Restaurants, Movies, Mall..." required>
+                <label for="location">Where</label>
+                  <input type="text" id="location" name="location" placeholder="ie: New York, 85225, Houston" class="js-query" required>
+                <button type="submit" class="search">SEARCH</button> 
+              </fieldset>
+            </form>  
+          </main>
+
+          <section id="jokeResults">
+          </section>
+          
+        </div>
+        
+        <div class="col-6">
+          <section id="searchResults" aria-live="assertive" hidden>
+          </section>
+        </div><!--col 12 or 6 -->
+
+      </div><!--row -->
+    </div><!--bg -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="index.js"></script>
+
+  </body>
+</html>
