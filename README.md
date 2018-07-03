@@ -1,7 +1,7 @@
 ## NAME
 Lunch and a Laugh
 
-## LINK: 
+## LINK
 https://lesleydreyer.github.io/LunchAndALaugh/
 
 ## SCREENSHOTS
