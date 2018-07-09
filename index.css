@@ -4,9 +4,17 @@
 }*/
 
 
+
 body {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 1.1px;
+  text-align: center;
+}
+
+.main {
+   
+    
+   text-align: center;
 }
 
 body,html {
@@ -20,13 +28,15 @@ body,html {
   background-repeat: no-repeat;
   background-size: cover;  
   height: 100%;
-  padding-bottom: 25px
+  padding-bottom: 25px;
+  
 }
 
 .logo {
     width: 100%;
-    margin: auto auto auto -30px;  /*top right bottom left*/
+    /*margin: auto auto auto -30px;  top right bottom left*/
     display: block;
+    margin: 0 auto;
 }
 
 li {
@@ -49,12 +59,14 @@ p {
 
 
 input[type=text] {
-    width: 70%;
-    display: block;
-    padding: 12px 12px;
-    margin-bottom: 15px;
-    margin-top: 8px;
-    font-family: inherit;
+  margin: 0 auto;
+  text-align: center;
+  width: 70%;
+  display: block;
+  padding: 12px 12px;
+  margin-bottom: 15px;
+  margin-top: 8px;
+  font-family: inherit;
 }
 
 label {
@@ -72,6 +84,7 @@ button {
   text-decoration: none;
   border: 1px solid black;
   border-radius: .12em;
+  cursor: pointer;
 }
 
 button:hover {
@@ -88,10 +101,14 @@ button:hover {
 }
 
 
-/*//////  SEARCH RESULTS  //////*/
+/*//////  SEARCH RESULTS  //////
 #searchResults {
   max-height: 100vh;
   overflow: auto;
+}*/
+#searchResults {
+  max-width: 80vh;
+  margin: 0 auto;
 }
 
 .collapsible {
@@ -101,7 +118,7 @@ button:hover {
     font-weight: 700;
     min-width: 100%;
     border: none;
-    text-align: left;
+    text-align: center;
     outline: none;
     padding: 15px;
 } /* D25454 F27264 FEC858 FFF0A6*/
@@ -111,10 +128,10 @@ button:hover {
 }
 
 .collapsible:after {
-    content: '\002B';
+    content: '   \002B';
     color: white;
     font-weight: bold;
-    float: right;
+    
 }
 
 .active:after {
@@ -129,7 +146,9 @@ button:hover {
     background-color: #f1f1f1;
 }
 
-
+.venue-url {
+  cursor: pointer;
+}
 
 .goToVenue {
   font-weight: 900;
@@ -174,7 +193,7 @@ button:hover {
 }
 
 
-/*//////  MEDIA QUERIES  //////*/
+/*//////  MEDIA QUERIES  //////
 
 @media  screen and (min-device-width : 768px) and (orientation : landscape) {
     .logo {
@@ -188,9 +207,47 @@ button:hover {
     max-width: 50vw;
     min-width: 40vw;
   }
-}
+}*/
 
-}
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) and (max-width: 479px) {
+      .logo {
+        max-width: 60vw;
+      }
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) and (max-width: 767px) {
+  .logo {
+    max-width: 50vw;
+    
+  }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) and (max-width: 991px) {
+  .logo {
+    max-width: 40vw;
+    
+  }
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) and (max-width: 1199px) {
+  .logo {
+    max-width: 30vw;
+  
+  }
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+      .logo {
+        max-width: 20vw;
+       
+      }
+    }
 
 /* We're setting our own focus outline here
  because we want to be sure it is visible against

@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg">
   <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Lunch and a Laugh - API capstone</title>
+        <title>Lunch and Laugh - API capstone</title>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
         <link rel="stylesheet" href="float-grid.css" />
@@ -12,15 +12,15 @@
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
   </head>
   <body >
-    <div class="bg">
+    
       <div class="row">
-        <div id="initialrow" class="col-12"><!--change to col 6 after search -->
+        <div id="initialrow" class="col-12">
           
           <header role="banner">
             <img src="images/logo2.svg" alt="Lunch and a Laugh logo" class="logo" />
           </header>
             
-          <main role="main">        
+          <main role="main">       <br/> 
             <form id="js-search-form" role="search">
               <fieldset class="fieldset">
                 <legend>Find somewhere to go for lunch (or any time)!</legend>
@@ -38,13 +38,12 @@
           
         </div>
         
-        <div class="col-6">
+        <div class="col-12">
           <section id="searchResults" aria-live="assertive" hidden>
           </section>
-        </div><!--col 12 or 6 -->
+        </div>
 
       </div><!--row -->
-    </div><!--bg -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
     </script>

@@ -64,16 +64,18 @@ function renderResults(item, joke, punchline) {
     return `
     <button class="collapsible focus">${venueName}</button>
     <div class="content">
-        <ul>
-          <li>Address: ${venueAddress}</li>
-          <li>Cross Streets: ${venueCrossStreet}</li>
-          <li attr="${venueID}" class="goToVenue" onclick="goToVenue('${venueID}')">Go to Venue website > </li>
+      <ul>
+        <li>Address: ${venueAddress}</li>
+        <li>Cross Streets: ${venueCrossStreet}</li>
+        <li attr="${venueID}" class="goToVenue">
+          <a class="venue-url" href="#" data-venueID="${venueID}" target="_blank" >Go to Venue website ></a>
+        </li>
         </ul>
     </div>`
-}
+}// <p onclick="window.open('https://xxx.com')">xxx</p>
 
 ///// have to do a separate call to the foursquare api because the url is different to get details of venue... explore vs venue_id
-function goToVenue(venueID){
+function goToVenue(venueID,self){
     const query = {
     client_id: 'WZZAVWT5OF4P4UPBSXZF53UJX3NLO3QPEHKIIBYYTAYQDINZ',
     client_secret: 'F205HL4CMHFLA2LLXWXZDAGM2AONX354VWEFCW3MBBY2KKHN',
@@ -89,7 +91,10 @@ function goToVenue(venueID){
   })
    .done(function(result) {
      if (result.response.venue.url !== (undefined)){
-       window.open(result.response.venue.url);
+       console.log(self);
+       $(self).attr('href', result.response.venue.url);
+       $(self)[0].click();
+      //  window.open(result.response.venue.url);
     }
     else {
       alert("Sorry, No URL provided.");
@@ -127,7 +132,7 @@ function watchSubmit() {
         let locationSearch = $("#location").val();
         let exploreURL = "explore";
         $('#searchResults').prop('hidden', false);
-        $("#initialrow").removeClass('col-12').addClass('col-6');
+        //$("#initialrow").removeClass('col-12').addClass('col-6');
         getDataFromApi(venueSearch, locationSearch, exploreURL, callback);
         //$('.search').click(() => {
           $('html, body').animate({
@@ -135,6 +140,17 @@ function watchSubmit() {
           }, 
           1000);
         //});
+    });
+
+    $('#searchResults').on('click','.venue-url',function(e){
+      if($(this).attr('href')=='#'){
+        e.preventDefault();
+        var venueID = $(this).attr('data-venueID');
+        goToVenue(venueID,this);
+      } else {
+        e.stopPropagation();
+        return true;
+      }
     });
 }
 
