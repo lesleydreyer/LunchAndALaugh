@@ -3,7 +3,7 @@
 const SEARCH_URL = "https://api.foursquare.com/v2/venues/";//explore";
 // "https://api.foursquare.com/v2/venues/VENUE_ID";
 
-const JOKE_SEARCH_URL = 'https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke';
+const JOKE_SEARCH_URL = 'https://official-joke-api.appspot.com/random_joke';//'https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke';
  
 var myJoke ="";
 var myPunchline="";
